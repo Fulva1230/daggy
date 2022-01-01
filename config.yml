@@ -22,7 +22,7 @@ params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
     title: Daggy
     description: "A place for Fulva to spread all the ideas"
-    author: "Fulva"
+    author: Fulva
     # author: ["Me", "You"] # multiple authors
     DateFormat: "January 2, 2006"
     defaultTheme: auto # dark, light
