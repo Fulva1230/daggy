@@ -11,23 +11,25 @@ jobs:
         with:
           submodules: true
           persist-credentials: false
+          path: ./source
       - run: |
           wget https://github.com/gohugoio/hugo/releases/download/v0.91.2/hugo_extended_0.91.2_Linux-64bit.deb
           sudo dpkg -i hugo_extended_0.91.2_Linux-64bit.deb
           hugo
-          git checkout --orphan gh-pages
-          mv public .public
-          rm * -rf
-          cp .public/* ./ -rf
-          rm .public -rf
+          mv public $GITHUB_WORKSPACE/public
+        working-directory: ./source
+      - run: |
+          git init
           git add --all
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git commit -m "publish"
+        working-directory: ./public
       - name: Push site
         uses: ad-m/github-push-action@master
         with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
             branch: gh-pages
             force: true
+            directory: ./public
         
