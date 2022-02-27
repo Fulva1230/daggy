@@ -41,14 +41,13 @@ $$ {#eq-new-pdf}
 </p>
 
 We can make use of the new pdf given in @eq-new-pdf, considering
-
 <p>
 $$
 \begin{align*}
 E\left[\max\left(X_{1},...,X_{n}\right)\right] & =E\left[\hat{X}_{n}\right]\\
  & =\int_{0}^{1}\int_{0}^{x_{n}}\int_{0}^{x_{n-1}}...\int_{0}^{x_{2}}x_{n}f_{\hat{X}_{1},\hat{X}_{2},...,\hat{X}_{n}}\left(x_{1},x_{2},...,x_{n}\right)dx_{1}...dx_{n-2}dx_{n-1}dx_{n}\\
  & =\int_{0}^{1}\int_{0}^{x_{n}}\int_{0}^{x_{n-1}}...\int_{0}^{x_{2}}x_{n}n!dx_{1}...dx_{n-2}dx_{n-1}dx_{n}\\
- & =\int_{0}^{1}x_{n}n!\frac{x_{n}^{n-1}}{\left(n-1\right)!}dx_{n}=\int_{0}^{1}nx^{n}dx_{n}=\frac{n}{n+1}
+ & =\int_{0}^{1}x_{n}n!\frac{x_{n}^{n-1}}{\left(n-1\right)!}dx_{n}=\int_{0}^{1}nx_{n}^{n}dx_{n}=\frac{n}{n+1}
 \end{align*}
 $$
 </p>
