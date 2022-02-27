@@ -41,6 +41,7 @@ $$ {#eq-new-pdf}
 </p>
 
 We can make use of the new pdf given in @eq-new-pdf, considering
+
 <p>
 $$
 \begin{align*}

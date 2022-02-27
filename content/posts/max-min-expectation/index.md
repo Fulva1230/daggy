@@ -40,8 +40,10 @@ n! &amp; \text{if }0&lt;x_{1}&lt;x_{2}&lt;,...,&lt;x_{n}&lt;1\\
 \end{cases}
  \qquad(1)$$</span>
 </p>
+
 We can make use of the new pdf given in [Equation 1](#eq-new-pdf),
 considering
+
 <p>
 $$
 \begin{align*}
