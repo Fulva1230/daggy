@@ -11,31 +11,16 @@ jobs:
         with:
           submodules: true
           persist-credentials: false
-          path: ./source
-      - name: Install Hugo
-        run: |
-          pip install -r requirements.txt
-          python -m hugo_download
-          sudo dpkg -i hugo.deb
-        working-directory: ./source
-      - name: Build Site
-        run: |
-          hugo
-          mv public $GITHUB_WORKSPACE/public
-        working-directory: ./source
-      - name: Set Publish
-        run: |
-          git init
-          git add --all
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git commit -m "publish"
-        working-directory: ./public
-      - name: Push site
-        uses: ad-m/github-push-action@master
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
         with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            branch: gh-pages
-            force: true
-            directory: ./public
+          hugo-version: 'latest'
+          extended: true
+      - name: Build Site
+        run: hugo
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
         
