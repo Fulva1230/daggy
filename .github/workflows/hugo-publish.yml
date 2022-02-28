@@ -12,14 +12,19 @@ jobs:
           submodules: true
           persist-credentials: false
           path: ./source
-      - run: |
+      - name: Install Hugo
+        run: |
           pip install -r requirements.txt
           python -m hugo_download
           sudo dpkg -i hugo.deb
+        working-directory: ./source
+      - name: Build Site
+        run: |
           hugo
           mv public $GITHUB_WORKSPACE/public
         working-directory: ./source
-      - run: |
+      - name: Set Publish
+        run: |
           git init
           git add --all
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
