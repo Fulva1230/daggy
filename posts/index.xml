@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Daggy</title>
+    <link>https://fulva1230.github.io/daggy/posts/</link>
+    <description>Recent content in Posts on Daggy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 27 Feb 2022 12:13:46 +0000</lastBuildDate><atom:link href="https://fulva1230.github.io/daggy/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Max Min Expectation</title>
+      <link>https://fulva1230.github.io/daggy/posts/max-min-expectation/</link>
+      <pubDate>Sun, 27 Feb 2022 12:13:46 +0000</pubDate>
+      
+      <guid>https://fulva1230.github.io/daggy/posts/max-min-expectation/</guid>
+      <description>Question If $X_{1},X_{2},&amp;hellip;X_{n}$ are independent and identically distributed random variables having uniform distributions over $(0,1)$, find
+(a). $E\left[\max\left(X_{1},&amp;hellip;,X_{n}\right)\right]$;
+(b). $E\left[\min\left(X_{1},&amp;hellip;,X_{n}\right)\right]$
+Answer a. The joint probability density function is
+ $$ f_{X_{1},X_{2},...,X_{n}}\left(x_{1},x_{2},...,x_{n}\right)=\begin{cases} 1 &amp; \text{if }x_{1},x_{2},...,x_{n}\in[0,1]\\ 0 &amp; \text{otherwise}. \end{cases} $$ The re-ordered joint probability density function is  $$ f_{\hat{X}_{1},\hat{X}_{2},...,\hat{X}_{n}}\left(x_{1},x_{2},...,x_{n}\right)=\begin{cases} n! &amp;amp; \text{if }0&amp;lt;x_{1}&amp;lt;x_{2}&amp;lt;,...,&amp;lt;x_{n}&amp;lt;1\\ 0 &amp;amp; \text{otherwise} \end{cases} \qquad(1)$$ We can make use of the new pdf given in Equation 1, considering</description>
+    </item>
+    
+    <item>
+      <title>統計問題：會佔幾張桌子？</title>
+      <link>https://fulva1230.github.io/daggy/posts/how-many-tables/</link>
+      <pubDate>Thu, 13 Jan 2022 20:59:42 +0800</pubDate>
+      
+      <guid>https://fulva1230.github.io/daggy/posts/how-many-tables/</guid>
+      <description>問題描述 N個人參加一個晚宴，他們依隨機的順序分別抵達晚宴會場，他們任一人到達晚宴時，會尋找他們是否有朋友已待在晚宴裡，如果有，就會與朋友共桌，如果沒有，則會自己坐一張還未有人佔的桌子邊。假設在這N個人中隨機挑兩人，會有p的機率兩人是朋友。問在N個人抵達會場後，會場被他們佔用的桌子數的期望值是多少。1
+解  這個問題只需要知道桌子數的期望值，所以比起用占用的桌子數當作隨機變數，可以用虛擬變量(Dummy variable) \(X_i\) ，定義為第 \(i\) 個抵達的人是否開新桌，是的話為1，不是則為0。因為第 \(i\) 個人要開新桌的條件為第 \(1..i-1\) 個人皆不是他朋友，它的Probability mass function就是 \[ p_{X_{i}}\left(x\right)=\begin{cases} \left(1-p\right)^{i-1} &amp; x=1\\ 1-\left(1-p\right)^{i-1} &amp; x=0\\ 0 &amp; \text{otherwise} \end{cases},\text{for }i=1,2,...,N \] 這樣答案就會是 \begin{align*} E\left[\sum_{i=1}^{N}X_{i}\right] &amp; =\sum_{i=1}^{N}E\left[X_{i}\right]\\ &amp; =\sum_{i=1}^{N}\left(1-p\right)^{i-1}\\ &amp; =\frac{1-\left(1-p\right)^{N}}{1-\left(1-p\right)}\\ &amp; =\frac{1-\left(1-p\right)^{N}}{p} \end{align*}   來自 Ross, S. M. (2014). A first course in probability. Pearson P.373 Problem 7.8.&amp;#160;&amp;#x21a9;&amp;#xfe0e;
+   </description>
+    </item>
+    
+    <item>
+      <title>Expectation of Binomial Distribution</title>
+      <link>https://fulva1230.github.io/daggy/posts/expectation-of-binomial-distribution/</link>
+      <pubDate>Wed, 05 Jan 2022 20:23:55 +0800</pubDate>
+      
+      <guid>https://fulva1230.github.io/daggy/posts/expectation-of-binomial-distribution/</guid>
+      <description>Consider a binomial distribution \(X\) with parameters \(n\) and \(p\). Its probability mass function is $$ p\left(x\right)=\begin{cases} \frac{n!}{\left(n-x\right)!x!}p^{x}\left(1-p\right)^{n-x} &amp; 0\leq x\leq n\\ 0 &amp; \text{otherwise}. \end{cases} $$ It&#39;s expectation is given by $$ \begin{align*} E\left[X\right] &amp; =\sum_{x=0}^{n}xp\left(x\right)\\ &amp; =\sum_{x=1}^{n}\frac{n!x}{\left(n-x\right)!x!}p^{x}\left(1-p\right)^{n-x}\\ &amp; =\sum_{x=1}^{n}np\frac{\left(n-1\right)!}{\left(n-x\right)!\left(x-1\right)!}p^{\left(x-1\right)}\left(1-p\right)^{n-x}\\ &amp; =np\sum_{x=1}^{n}\frac{\left(n-1\right)!}{\left(n-x\right)!\left(x-1\right)!}p^{\left(x-1\right)}\left(1-p\right)^{n-x}\\ &amp; =np. \end{align*} $$ Note that if \(Y\) is a binomial distribution with parameter \(n-1\) and \(p\), it has probability mass function as \[ p_{Y}\left(y\right)=\begin{cases} \frac{\left(n-1\right)!}{\left(n-y\right)!y!}p^{y}\left(1-p\right)^{\left(n-1\right)-y} &amp; 0\leq y\leq n-1\\ 0 &amp; \text{otherwise} \end{cases} \] So \begin{align*} E\left[X\right] &amp; =np\sum_{y=0}^{n-1}\frac{\left(n-1\right)!</description>
+    </item>
+    
+    <item>
+      <title>Does It Hurt?</title>
+      <link>https://fulva1230.github.io/daggy/posts/does-it-hurt/</link>
+      <pubDate>Sun, 02 Jan 2022 13:22:54 +0000</pubDate>
+      
+      <guid>https://fulva1230.github.io/daggy/posts/does-it-hurt/</guid>
+      <description>在射擊遊戲中，當你奮力殺敵的時候，敵人痛苦的倒下，你是否想過一個問題，當他們倒下時，會不會痛？聽起來是個很奇怪的問題對吧，你肯定認為敵人會痛苦的倒下，是因為有人寫了程式，計算敵人受到的傷害，當生命值歸零的那個瞬間，便播放痛苦倒下的動畫，當然，動畫是人預先畫出來的。
+因為程式內部的計算是生硬的生命值加減，所以在遊戲中敵人痛苦的倒下只是個假象，實際上沒有一個意識，會經歷痛苦，並隨著你殺敵而消逝。但當你看著某個活生生的人，不管為了什麼原因，露出痛苦的表情時，你卻不會告訴自己說：「那個人只是因為大腦內電磁波、神經元的反應，讓他做出這樣的動作。」為什麼？
+讓我們從一個大家都有的共識開始討論吧。當你腳趾頭撞到桌腳時，你從不會懷疑自己痛苦而流漏出的猙獰表情是假的。因為你能確切地感受到，自己的感受。當你看到別人受苦時，因為別人跟你擁有一樣的機制，你能得到一個結論：那個人也有一個內在正在痛苦。
+然而你不能肯定，畢竟你不能親身經歷到他人的痛苦，你只能從自己的經驗，來揣測他人也有相同的經驗。從科學的角度觀測，一個人經歷痛苦，過程就是一連串的電磁訊號，發生在大腦，與有關的肌肉間。雖然科學還無法解讀這些電磁訊號，但已經可以確定，這些訊號與當下那個人的內在經驗綁在一起。
+如果一個人痛苦時身體運作的機制就是單純的物理現象。即便我們對這個機制並非全然了解，卻可以確定，這個機制大概不需要什麼額外的超自然元素摻雜在裡面。
+如果你願意承認單純的物理現象能夠產生豐富、複雜的內在經驗，那麼你就不能確定那些只存在遊戲裡面，運作在電腦處理器中的遊戲角色，當他們流露出痛苦、喜悅的表情、動作時，是否有個內在相映。或許你會聲稱，從程式的邏輯來看，確實沒有個內在經驗，程式僅是死板板的用一些變數，並做判斷，來產生那個角色的行為。
+你大概會是對的，用單純程式碼構築的遊戲角色，大概沒有複雜的到會產生內在經驗。但如果使用AI或是機器學習來產生遊戲角色的行為時，他們的行為將變得更加豐富，而最終，沒有人能理解內部程式運作的邏輯為何。如果他們的行為能與人相彷，只不過存在於遊戲中，他們會有內在經驗嗎？他們的痛苦會真的有個「靈魂」承受嗎？
+或許下次你在玩遊戲的時候，板機扣下之前猶豫一下，或者跟對面和解，說不定遊戲角色真的會感謝你（但不一定會表現出來）。</description>
+    </item>
+    
+    <item>
+      <title>The Simulated Universe</title>
+      <link>https://fulva1230.github.io/daggy/posts/the-simulated-universe/</link>
+      <pubDate>Sat, 01 Jan 2022 15:10:24 +0000</pubDate>
+      
+      <guid>https://fulva1230.github.io/daggy/posts/the-simulated-universe/</guid>
+      <description>你曾否想過，整個宇宙不過是某個更高等文明創造的模擬器，而我們不過是那台模擬器中的程式碼，冷冰冰的從輸入計算出輸出，不斷地重複同樣的步驟，周而復始，毫無意義。
+如果我們不過是寫死的程式碼，那就好像某處有一本有關這個世界的劇本，所有理應發生的事都已寫在裡面，我們就是電影裡的演員，按著劇本分毫不差的說出台詞。很多我們熟悉的概念將僅是幻覺。
+但你肯定不會這麼覺得，誰願意相信自己僅是一團複雜的計算，而不是有情感，有創造力，有美感的一個人呢？但用電腦逐行計算，產生的行為就不可能擁有創造力、有認知呢？假設運算能力足夠，程式設計得夠複雜、精巧，要表現出一個人複雜的外在與內在並非不可能，只是很難罷了。
+所以我們表現出有靈魂的複雜樣貌這項事實，無法拿來反證宇宙只是模擬器的假設，因為我們可以是電腦，只是夠精巧，寫在我們裡面的程式夠複雜，讓我們以為自己超越「決定性」般的計算。
+如果連像人的行為這般複雜，難以理解的現象都能用模擬出來，那這世界上還有什麼是不能模擬的？或許沒有，但這不代表這世界就是模擬出來的。
+模擬的宇宙說不定可以成為費米悖論的答案，假設有個高等文明創造了這個宇宙，目的是為了觀察另一個文明從無到有，那麼我們肯定就是他們觀察的對象。再者，他們肯定會觀察宇宙中第一個出現的文明，代表除了我們宇宙中再無其他文明。或許我們該擔心一下，他們打算觀察到什麼時候，然後決定重來一遍。
+宇宙很大，人類的野心也是。我們想探究一切，所以提出大膽的假設，並嘗試駁斥或證實，無論如何，都必須保持開放的心態，接受所有的可能。</description>
+    </item>
+    
+  </channel>
+</rss>
