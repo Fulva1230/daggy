@@ -13,8 +13,9 @@ jobs:
           persist-credentials: false
           path: ./source
       - run: |
-          wget https://github.com/gohugoio/hugo/releases/download/v0.91.2/hugo_extended_0.91.2_Linux-64bit.deb
-          sudo dpkg -i hugo_extended_0.91.2_Linux-64bit.deb
+          pip install -r requirements.txt
+          python -m hugo_download
+          sudo dpkg -i hugo.deb
           hugo
           mv public $GITHUB_WORKSPACE/public
         working-directory: ./source
