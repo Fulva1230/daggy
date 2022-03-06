@@ -1,5 +1,5 @@
 name: hugo-publish
-on: 
+on:
   push:
     branches:
       - main
@@ -16,6 +16,11 @@ jobs:
         with:
           hugo-version: 'latest'
           extended: true
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1
+      - run: gem install asciidoctor
       - name: Build Site
         run: hugo
       - name: Deploy
@@ -23,4 +28,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-        

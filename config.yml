@@ -8,6 +8,10 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
+security:
+  exec:
+    allow: ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^asciidoctor$']
+
 minify:
     disableXML: true
     minifyOutput: true
