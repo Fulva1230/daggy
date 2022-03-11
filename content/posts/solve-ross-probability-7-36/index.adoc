@@ -1,0 +1,38 @@
+---
+title: "Solve Ross's Probability CH.7 Q.36"
+date: 2022-03-11T19:47:22+08:00
+draft: true
+---
+:stem: latexmath
+:eqnums:
+
+== Problem
+Let stem:[X] be the number of 1's and stem:[Y] the number of 2's that occur in stem[n] rolls of a fair die. Compute stem:[\text{Cov}(X,Y)].
+
+== Solution
+To solve for stem:[\text{Cov}(X,Y)], we need to first find the joint probability mass function of stem:[X] and stem:[Y].
+Consider that the event where stem:[X+Y>n]; The event would never happen. For the event stem:[B] where stem:[X+Y \leq n], to know the probability, let us consider a specific event stem:[A]: First stem:[X = x] rolls result in 1's. The following stem:[Y = y] rolls result in 2's. All the remaining stem:[n-x-y] result in neither 1's nor 2's. The event has a probability given by
+
+[stem]
+++++
+\begin{equation}
+P\left[A\right]=\left(\frac{1}{6}\right)^{x}\left(\frac{1}{6}\right)^{y}\left(\frac{5}{6}\right)^{n-x-y}.
+\label{eq:probability-of-A}
+\end{equation}
+++++
+
+The event stem:[A] is a subset of the event stem:[B]. That is, an outcome of the event stem:[A] is also an outcome of the event stem:[B]. To know the probability of the event stem:[B], we need to apply \eqref{eq:probability-of-A} to find stem:[P[B\]]. The event stem:[A] actually is a specific permutation of the event stem:[B]. To find stem:[P[B\]], we need to find the number of the permutations of the event stem:[B].
+
+Consider that there are stem:[n] distinct items to be divided into 3 groups. One group has stem:[x] items. Another one has stem:[y] items. The other one has stem:[n-x-y] items.
+The number of the outcomes is given by
+[stem]
+++++
+\begin{equation}
+\frac{n!}{x!y!\left(n-x-y\right)!}\label{eq:permutations}
+\end{equation}
+++++
+
+The number of the outcomes can tell us the number of the permutations. Consider that the items have numbers from 1 to stem:[n].
+
+
+To know the probability of the event stem:[B], we need to consider all the permutations. To know the number of the permutations of the event stem:[B]
