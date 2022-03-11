@@ -32,7 +32,7 @@ The number of the outcomes is given by
 \end{equation}
 ++++
 
-The number of the outcomes can tell us the number of the permutations. Consider that the items have numbers from 1 to stem:[n].
+The number of the outcomes can tell us the number of the permutations. Consider that the items have numbers from 1 to stem:[n] and the groups have labels of "1's", "2's", and "otherwise". When the item with number stem:[k] is assigned to group with label "1's", it means that the stem:[k]-th roll gives 1. There is one-to-one correspondence the outcomes and the permutations.
 
 
 To know the probability of the event stem:[B], we need to consider all the permutations. To know the number of the permutations of the event stem:[B]
