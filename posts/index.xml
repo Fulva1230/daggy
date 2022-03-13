@@ -5,7 +5,17 @@
     <link>https://fulva1230.github.io/daggy/posts/</link>
     <description>Recent content in Posts on Daggy</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 06 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://fulva1230.github.io/daggy/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Mar 2022 19:47:22 +0800</lastBuildDate><atom:link href="https://fulva1230.github.io/daggy/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solve Ross&#39;s Probability CH.7 Q.36</title>
+      <link>https://fulva1230.github.io/daggy/posts/solve-ross-probability-7-36/</link>
+      <pubDate>Fri, 11 Mar 2022 19:47:22 +0800</pubDate>
+      
+      <guid>https://fulva1230.github.io/daggy/posts/solve-ross-probability-7-36/</guid>
+      <description>Problem Let \(X\) be the number of 1’s and \(Y\) the number of 2’s that occur in stem[n] rolls of a fair die. Compute \(\text{Cov}(X,Y)\).
+   Solution To solve for \(\text{Cov}(X,Y)\), we need to first find the joint probability mass function of \(X\) and \(Y\). Consider that the event where \(X+Y&amp;gt;n\); The event would never happen. For the event \(B\) where \(X+Y \leq n\), to know the probability, let us consider a specific event \(A\): First \(X = x\) rolls result in 1’s.</description>
+    </item>
+    
     <item>
       <title>我們可以傷害他人嗎?</title>
       <link>https://fulva1230.github.io/daggy/posts/can-we-harm-others/</link>
