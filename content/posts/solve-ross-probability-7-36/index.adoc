@@ -1,7 +1,7 @@
 ---
 title: "Solve Ross's Probability CH.7 Q.36"
 date: 2022-03-11T19:47:22+08:00
-draft: true
+draft: false
 ---
 :stem: latexmath
 :eqnums:
@@ -23,8 +23,7 @@ P\left[A\right]=\left(\frac{1}{6}\right)^{x}\left(\frac{1}{6}\right)^{y}\left(\f
 
 The event stem:[A] is a subset of the event stem:[B]. That is, an outcome of the event stem:[A] is also an outcome of the event stem:[B]. To know the probability of the event stem:[B], we need to apply \eqref{eq:probability-of-A} to find stem:[P[B\]]. The event stem:[A] actually is a specific permutation of the event stem:[B]. To find stem:[P[B\]], we need to find the number of the permutations of the event stem:[B].
 
-Consider that there are stem:[n] distinct items to be divided into 3 groups. One group has stem:[x] items. Another one has stem:[y] items. The other one has stem:[n-x-y] items.
-The number of the outcomes is given by
+To find the number of the permutations, we need to find a task whois outcomes can represent the permutations. Consider that there are stem:[n] distinct items to be divided into 3 groups. One group has stem:[x] items. Another one has stem:[y] items. The other one has stem:[n-x-y] items. The number of the outcomes is given by
 [stem]
 ++++
 \begin{equation}
@@ -32,7 +31,66 @@ The number of the outcomes is given by
 \end{equation}
 ++++
 
-The number of the outcomes can tell us the number of the permutations. Consider that the items have numbers from 1 to stem:[n] and the groups have labels of "1's", "2's", and "otherwise". When the item with number stem:[k] is assigned to group with label "1's", it means that the stem:[k]-th roll gives 1. There is one-to-one correspondence the outcomes and the permutations.
+The number of the outcomes can tell us the number of the permutations. Consider that the items have numbers from 1 to stem:[n] and the groups have labels of "1's", "2's", and "otherwise". When the item with number stem:[k] is assigned to group with label "1's", it means that the stem:[k]-th roll gives 1. By such interpretation of the outcomes, we can find that there is one-to-one correspondence the outcomes and the permutations.
 
+With the number of the outcomes, the joint pmf of stem:[X] and stem:[Y] is given by
+[stem]
+++++
+\begin{equation}
+p\left(x,y\right)=\begin{cases}
+\frac{n!}{x!y!\left(n-x-y\right)!}\left(\frac{1}{6}\right)^{x+y}\left(\frac{5}{6}\right)^{n-x-y} & \text{if }x+y\leq n\text{ and }x,y\geq0\\
+0 & \text{otherwise}
+\end{cases}\label{eq:joint_probability}
+\end{equation}
+++++
 
-To know the probability of the event stem:[B], we need to consider all the permutations. To know the number of the permutations of the event stem:[B]
+We can now focus on solving for stem:[\text{Cov}(X,Y)]. Expanding it yields
+[stem]
+++++
+\begin{align}
+\text{Cov}\left(X,Y\right) & =E\left[\left(X-E\left[X\right]\right)\left(Y-E\left[Y\right]\right)\right]\nonumber \\
+ & =E\left[XY\right]-E\left[X\right]E\left[Y\right].\label{eq:cov_XY}
+\end{align}
+++++
+We need to find stem:[E[XY\]], stem:[E[X\]], and stem:[E[Y\]]. Since each roll has stem:[\frac{1}{6}] chance to yield 1, it is simply that
+[stem]
+++++
+\begin{equation}
+E\left[X\right]=E\left[Y\right]=\frac{n}{6}\label{eq:E_X_or_Y}
+\end{equation}
+++++
+To find stem:[E[XY\]], we need to expand it,
+[stem]
+++++
+\begin{align}
+E\left[XY\right] & =\sum_{i=0}^{n}\sum_{j=0}^{n-i}p\left(i,j\right)ij\nonumber \\
+ & =\sum_{i=1}^{n-1}\sum_{j=1}^{n-i}\frac{n!ij}{i!j!\left(n-i-j\right)!}\left(\frac{1}{6}\right)^{i+j}\left(\frac{5}{6}\right)^{n-i-j}\label{eq:E_XY}\\
+ & =\sum_{i=1}^{n-1}\sum_{j=1}^{n-i}\frac{n!}{\left(i-1\right)!\left(j-1\right)!\left(n-i-j\right)!}\left(\frac{1}{6}\right)^{i+j}\left(\frac{5}{6}\right)^{n-i-j}\nonumber
+\end{align}
+++++
+The general idea to solve for \eqref{eq:E_XY} is using the fact that a pmf sums to 1. Consider that
+[stem]
+++++
+\begin{align*}
+E\left[XY\right]
+ & =\sum_{i=1}^{n}\sum_{j=1}^{n-i}\frac{n!}{\left(i-1\right)!\left(j-1\right)!\left(n-i-j\right)!}\left(\frac{1}{6}\right)^{i+j}\left(\frac{5}{6}\right)^{n-i-j}\\
+ & =\sum_{i=1}^{n-1}\sum_{j=1}^{n-i}\frac{n!}{\left(i-1\right)!\left(j-1\right)!\left(n-i-j\right)!}\left(\frac{1}{6}\right)^{i+j}\left(\frac{5}{6}\right)^{n-i-j}\\
+ & =\sum_{i=0}^{n-2}\sum_{j=1}^{n-1-i}\frac{n!}{\left(i\right)!\left(j-1\right)!\left(n-1-i-j\right)!}\left(\frac{1}{6}\right)^{i+1+j}\left(\frac{5}{6}\right)^{n-1-i-j}\\
+ & =\sum_{i=0}^{n-2}\sum_{j=0}^{n-2-i}\frac{n!}{\left(i\right)!\left(j\right)!\left(n-2-i-j\right)!}\left(\frac{1}{6}\right)^{i+j+2}\left(\frac{5}{6}\right)^{n-2-i-j}\\
+ & =\frac{n\left(n-1\right)}{36}\sum_{i=0}^{n-2}\sum_{j=0}^{n-2-i}\frac{\left(n-2\right)!}{\left(i\right)!\left(j\right)!\left(n-2-i-j\right)!}\left(\frac{1}{6}\right)^{i+j}\left(\frac{5}{6}\right)^{n-2-i-j}\\
+ & =\frac{n\left(n-1\right)}{36}.
+\end{align*}
+++++
+Thus, we have
+[stem]
+++++
+\begin{equation}
+E\left[XY\right]=\frac{n\left(n-1\right)}{36}\label{eq:E_XY-1}.
+\end{equation}
+++++
+
+By applying \eqref{eq:cov_XY}, \eqref{eq:E_X_or_Y}, and \eqref{eq:E_XY-1}, stem:[\text{Cov}(X,Y)] is given by
+[stem]
+++++
+\text{Cov}\left(X,Y\right)=E\left[XY\right]-E\left[X\right]E\left[Y\right]=\frac{n\left(n-1\right)}{36}-\frac{n^{2}}{36}=-\frac{n}{36}.
+++++
