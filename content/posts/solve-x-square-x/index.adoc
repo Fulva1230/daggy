@@ -1,0 +1,48 @@
+---
+title: "Solve the Derivative of $x^x$"
+date: 2023-01-29T14:23:54+08:00
+draft: true
+---
+
+:stem: latexmath
+:eqnums:
+
+How to solve stem:[\frac{dx^x}{dx}]?
+
+Observe that the expression is a exponential function whoise base and exponent both are an function of stem:[x]. When the base and exponent change with stem:[x], how the expression changes with stem:[x] is quite complicated. To simplify, some techniques can apply to fix part of an expression when taking its derivative.
+
+Define a multivariate function with independent variables stem:[s] and stem:[t]:
+[stem]
+++++
+\begin{equation}
+z = s^t
+\end{equation}
+++++
+where the stem:[s] and stem:[t] are a function of stem:[x]. Simply put, stem:[z] is a function of stem:[x]. Take derivative of stem:[z] involves taking partial derivatives about stem:[x] and stem:[t]. That is, 
+[stem]
+++++
+\begin{equation}
+\frac{dz}{dx}=\frac{ds}{dx}\frac{\partial z}{\partial s}+\frac{dt}{dx}\frac{\partial z}{\partial t}.
+\end{equation}
+++++
+When taking partial derivatives, the other independent variables are considered fixed, so the partial derivatives are
+[stem]
+++++
+\begin{equation}
+\begin{cases}
+\frac{\partial z}{\partial s} & =ts^{t-1}\\
+\frac{\partial z}{\partial t} & =s^{t}\ln s.
+\end{cases}
+\end{equation}
+++++
+To solve stem:[\frac{dx^x}{dx}], substitute stem:[s] and stem:[t] with stem:[x] and apply the equations above, which yields
+[stem]
+++++
+\begin{equation}
+\begin{aligned}\frac{dx^{x}}{dx} & =\frac{dz}{dx}|_{s,t=x}\\
+ & =\left(ts^{t-1}+s^{t}\ln s\right)|_{s,t=x}\\
+ & =x\cdot x^{x-1}+x^{x}\ln x\\
+ & =\left(1+\ln x\right)x^{x}.
+\end{aligned}
+\end{equation}
+++++
