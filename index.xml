@@ -13,9 +13,9 @@
       
       <guid>https://fulva1230.github.io/daggy/posts/solve-x-square-x/</guid>
       <description>How to solve \(\frac{dx^x}{dx}\)?
-Observe that the expression is a exponential function whoise base and exponent both are an function of \(x\). When the base and exponent change with \(x\), how the expression changes with \(x\) is quite complicated. To simplify, some techniques can apply to fix part of an expression when taking its derivative.
-Define a multivariate function with independent variables \(s\) and \(t\):
-\[\begin{equation} z = s^t \end{equation}\] where the \(s\) and \(t\) are a function of \(x\).</description>
+Observe that the expression is an exponential function whoise base and exponent both are a function of \(x\). When both the base and exponent change with \(x\), how the expression changes with \(x\) is quite complicated. To simplify, some techniques can apply to fix part of an expression when taking its derivative.
+Define a multivariate function with two independent variables \(s\) and \(t\):
+\[\begin{equation} z = s^t \end{equation}\] where either the \(s\) and \(t\) are a function of \(x\).</description>
     </item>
     
     <item>
