@@ -5,7 +5,19 @@
     <link>https://fulva1230.github.io/daggy/</link>
     <description>Recent content on Daggy</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 11 Mar 2022 19:47:22 +0800</lastBuildDate><atom:link href="https://fulva1230.github.io/daggy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Jan 2023 14:23:54 +0800</lastBuildDate><atom:link href="https://fulva1230.github.io/daggy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solve the Derivative of $x^x$</title>
+      <link>https://fulva1230.github.io/daggy/posts/solve-x-square-x/</link>
+      <pubDate>Sun, 29 Jan 2023 14:23:54 +0800</pubDate>
+      
+      <guid>https://fulva1230.github.io/daggy/posts/solve-x-square-x/</guid>
+      <description>How to solve \(\frac{dx^x}{dx}\)?
+Observe that the expression is a exponential function whoise base and exponent both are an function of \(x\). When the base and exponent change with \(x\), how the expression changes with \(x\) is quite complicated. To simplify, some techniques can apply to fix part of an expression when taking its derivative.
+Define a multivariate function with independent variables \(s\) and \(t\):
+\[\begin{equation} z = s^t \end{equation}\] where the \(s\) and \(t\) are a function of \(x\).</description>
+    </item>
+    
     <item>
       <title>Solve Ross&#39;s Probability CH.7 Q.36</title>
       <link>https://fulva1230.github.io/daggy/posts/solve-ross-probability-7-36/</link>
