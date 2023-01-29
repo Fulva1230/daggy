@@ -9,16 +9,16 @@ draft: false
 
 How to solve stem:[\frac{dx^x}{dx}]?
 
-Observe that the expression is a exponential function whoise base and exponent both are an function of stem:[x]. When the base and exponent change with stem:[x], how the expression changes with stem:[x] is quite complicated. To simplify, some techniques can apply to fix part of an expression when taking its derivative.
+Observe that the expression is an exponential function whoise base and exponent both are a function of stem:[x]. When both the base and exponent change with stem:[x], how the expression changes with stem:[x] is quite complicated. To simplify, some techniques can apply to fix part of an expression when taking its derivative.
 
-Define a multivariate function with independent variables stem:[s] and stem:[t]:
+Define a multivariate function with two independent variables stem:[s] and stem:[t]:
 [stem]
 ++++
 \begin{equation}
 z = s^t
 \end{equation}
 ++++
-where the stem:[s] and stem:[t] are a function of stem:[x]. Simply put, stem:[z] is a function of stem:[x]. Take derivative of stem:[z] involves taking partial derivatives about stem:[x] and stem:[t]. That is, 
+where either the stem:[s] and stem:[t] are a function of stem:[x]. Simply put, stem:[z] is a function of stem:[x]. Take derivative of stem:[z] involves taking partial derivatives about stem:[s] and stem:[t]. That is, 
 [stem]
 ++++
 \begin{equation}
@@ -42,7 +42,8 @@ To solve stem:[\frac{dx^x}{dx}], substitute stem:[s] and stem:[t] with stem:[x] 
 \begin{aligned}\frac{dx^{x}}{dx} & =\frac{dz}{dx}|_{s,t=x}\\
  & =\left(ts^{t-1}+s^{t}\ln s\right)|_{s,t=x}\\
  & =x\cdot x^{x-1}+x^{x}\ln x\\
- & =\left(1+\ln x\right)x^{x}.
+ & =\left(1+\ln x\right)x^{x},
 \end{aligned}
 \end{equation}
 ++++
+which is the answer of the problem.
