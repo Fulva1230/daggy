@@ -6,7 +6,19 @@
     <description>Recent content on Daggy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 29 Jan 2023 14:23:54 +0800</lastBuildDate><atom:link href="https://fulva1230.github.io/daggy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Aug 2023 18:00:09 +0800</lastBuildDate><atom:link href="https://fulva1230.github.io/daggy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Parameterize Ellipse</title>
+      <link>https://fulva1230.github.io/daggy/posts/parameterized_ellipse/</link>
+      <pubDate>Sat, 05 Aug 2023 18:00:09 +0800</pubDate>
+      
+      <guid>https://fulva1230.github.io/daggy/posts/parameterized_ellipse/</guid>
+      <description>Consider a problem that we have an ellipse described by a polynomial equation given by
+\[\begin{equation} x^{T}Ax+B^{T}x+f=0 \end{equation}\] where \(x,B\in\mathbb{R}^{2}\), \(A\) is a 2 by 2 real symmetric matrix, and \(f\in\mathbb{R}\).
+To find points on the curve, one may first needs to find out the range the ellipse in. For example, \(a\leq x_{1}\leq b\). And then solving a second-order equation.
+That is, setting one variable as a parameter and making the other one be changed according to the equation.</description>
+    </item>
+    
     <item>
       <title>Solve the Derivative of $x^x$</title>
       <link>https://fulva1230.github.io/daggy/posts/solve-x-square-x/</link>
