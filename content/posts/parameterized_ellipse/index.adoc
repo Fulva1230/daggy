@@ -24,7 +24,7 @@ That is, setting one variable as a parameter and making the other one be changed
 this approach directly deals with the coordinates in the space, 
 which may not be the most simple and efficient one to find points on the ellipse.
 As an alternative, we can consider the ellipse as an affine transformation of a circle.
-We try to find a transformation that stem:[x=St-t_{0}] so that the equation would be
+We try to find a transformation that stem:[x=St+t_{0}] so that the equation would be
 [stem]
 ++++
 \begin{equation}
@@ -35,7 +35,7 @@ t^{T}t=1.
 By substitution, the equation can be
 [stem]
 ++++
-t^{T}S^{T}ASt+\left(B^{T}S-2t_{0}^{T}AS\right)t=B^{T}t_{0}-t_{0}^{T}At_{0}-f
+t^{T}S^{T}ASt+\left(B^{T}S+2t_{0}^{T}AS\right)t=-B^{T}t_{0}-t_{0}^{T}At_{0}-f
 ++++
 Note that to make stem:[\Lambda^{-\frac{1}{2}}] exist, all the eigenvalues of A must be positve so that they have real square root.
 
@@ -44,8 +44,8 @@ Let's setup some conditions:
 ++++
 \begin{cases}
 S^{T}AS & =r^{2}\\
-B^{T}S-2t_{0}^{T}AS & =0\\
-B^{T}t_{0}-t_{0}^{T}At_{0}-f & =r^{2}.
+B^{T}S+2t_{0}^{T}AS & =0\\
+-B^{T}t_{0}-t_{0}^{T}At_{0}-f & =r^{2}.
 \end{cases}
 ++++
 If these conditions are satisfied, the equation would be stem:[t^{T}r^{2}t+0t=r^{2}], which is equivelently, stem:[t^{T}t=1].
@@ -62,28 +62,28 @@ From the second condition, we can solve for stem:[t_{0}]
 [stem]
 ++++
 \begin{aligned}
-B^{T}S-2t_{0}^{T}AS&=B^{T}rQ\Lambda^{-\frac{1}{2}}-2t_{0}^{T}Q\Lambda Q^{T}rQ\Lambda^{-\frac{1}{2}}\\&=B^{T}Q\Lambda^{-\frac{1}{2}}-2t_{0}^{T}Q\Lambda^{\frac{1}{2}}\\&=0
+B^{T}S+2t_{0}^{T}AS&=B^{T}rQ\Lambda^{-\frac{1}{2}}+2t_{0}^{T}Q\Lambda Q^{T}rQ\Lambda^{-\frac{1}{2}}\\&=B^{T}Q\Lambda^{-\frac{1}{2}}+2t_{0}^{T}Q\Lambda^{\frac{1}{2}}\\&=0
 \end{aligned}
 ++++
 
 [stem]
 ++++
-2t_{0}^{T}Q\Lambda Q^{T}=B^{T}
+2t_{0}^{T}Q\Lambda Q^{T}=-B^{T}
 ++++
 
 [stem]
 ++++
-2At_{0}=B
+2At_{0}=-B
 ++++
 
-From the third condition, we can simply solve for stem:[r=\sqrt{B^{T}t_{0}-t_{0}^{T}At_{0}-f}]
+From the third condition, we can simply solve for stem:[r=\sqrt{-B^{T}t_{0}-t_{0}^{T}At_{0}-f}]
 
 To sum up, an equation of the form of
 [stem]
 ++++
 x^{T}Ax+B^{T}x+f=0.
 ++++
-If we can make sure this is an ellipse, then we can find a tranformation of stem:[x=St-t_{0}]
+If we can make sure this is an ellipse, then we can find a tranformation of stem:[x=St+t_{0}]
 
 where 
 [stem]
@@ -91,8 +91,8 @@ where
 \begin{cases}
 S & =rQ\Lambda^{-\frac{1}{2}}\\
 A & =Q\Lambda Q^{T}\\
-2At_{0} & =B\\
-r & =\sqrt{B^{T}t_{0}-t_{0}^{T}At_{0}-f}
+2At_{0} & =-B\\
+r & =\sqrt{-B^{T}t_{0}-t_{0}^{T}At_{0}-f}
 \end{cases},
 ++++
 which make the ellipse in stem:[x] a circle in stem:[t]. That is, stem:[t^{T}t=1] is satisfied.
