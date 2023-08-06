@@ -21,7 +21,7 @@ To find points on the curve, one may first needs to find out the range the ellip
 For example, stem:[a\leq x_{1}\leq b]. And then solving a second-order equation.
 
 That is, setting one variable as a parameter and making the other one be changed according to the equation.
-this approach directly deals with the coordinates in the space, 
+This approach directly deals with the coordinates in the space, 
 which may not be the most simple and efficient one to find points on the ellipse.
 As an alternative, we can consider the ellipse as an affine transformation of a circle.
 We try to find a transformation that stem:[x=St+t_{0}] so that the equation would be
@@ -37,7 +37,6 @@ By substitution, the equation can be
 ++++
 t^{T}S^{T}ASt+\left(B^{T}S+2t_{0}^{T}AS\right)t=-B^{T}t_{0}-t_{0}^{T}At_{0}-f
 ++++
-Note that to make stem:[\Lambda^{-\frac{1}{2}}] exist, all the eigenvalues of A must be positve so that they have real square root.
 
 Let's setup some conditions:
 [stem]
@@ -55,8 +54,9 @@ into a form of stem:[A=Q\Lambda Q^{T}] where stem:[Q^{-1}=Q^{T}]. By setting
 stem:[S=rQ\Lambda^{-\frac{1}{2}}], it can be shown that 
 [stem]
 ++++
-S^{T}AS=r\Lambda^{-\frac{1}{2}}Q^{T}ArQ\Lambda^{-\frac{1}{2}}=r^{2}\Lambda^{-\frac{1}{2}}Q^{T}Q\Lambda Q^{T}Q\Lambda^{-\frac{1}{2}}=r^{2}
+S^{T}AS=r\Lambda^{-\frac{1}{2}}Q^{T}ArQ\Lambda^{-\frac{1}{2}}=r^{2}\Lambda^{-\frac{1}{2}}Q^{T}Q\Lambda Q^{T}Q\Lambda^{-\frac{1}{2}}=r^{2}.
 ++++
+Note that to make stem:[\Lambda^{-\frac{1}{2}}] exist, all the eigenvalues of A must be positve so that they have real square root.
 
 From the second condition, we can solve for stem:[t_{0}]
 [stem]
@@ -76,7 +76,7 @@ B^{T}S+2t_{0}^{T}AS&=B^{T}rQ\Lambda^{-\frac{1}{2}}+2t_{0}^{T}Q\Lambda Q^{T}rQ\La
 2At_{0}=-B
 ++++
 
-From the third condition, we can simply solve for stem:[r=\sqrt{-B^{T}t_{0}-t_{0}^{T}At_{0}-f}]
+From the third condition, we can simply solve for stem:[r=\sqrt{-B^{T}t_{0}-t_{0}^{T}At_{0}-f}].
 
 To sum up, an equation of the form of
 [stem]
