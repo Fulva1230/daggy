@@ -1,0 +1,244 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+The frequency response of a system is its output in response of a sinusoidal
+ input, for example, a 
+\begin_inset Formula $\sin\omega t$
+\end_inset
+
+.
+ If the system is linear and stable, its response must also be a sinusoidal
+ wave of the same frequecy.
+\end_layout
+
+\begin_layout Standard
+Here we present a simple derivation of the frequency response formula.
+ Consider that a linear differential system
+\begin_inset Formula 
+\[
+Ly\left(t\right)=x\left(t\right)
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $L=\left(\frac{d^{n}}{dt^{n}}+a_{1}\frac{d^{n-1}}{dt^{n-1}}+...+a_{n-1}\frac{d}{dt}+a_{n}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If we take laplace transform of both sides of the equation and assume 
+\begin_inset Formula $y^{\left(k\right)}\left(0\right)=0,k\in[0,n-1]$
+\end_inset
+
+, we get the transformed equation given by
+\begin_inset Formula 
+\[
+\left(s^{n}+a_{1}s^{n-1}+...+a_{n-1}s+a_{n}\right)Y\left(s\right)=X\left(s\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's formulate the equation as
+\begin_inset Formula 
+\[
+\frac{Y\left(s\right)}{X\left(s\right)}=T\left(s\right)=\left(s^{n}+a_{1}s^{n-1}+...+a_{n-1}s+a_{n}\right)^{-1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Consider defining the input 
+\begin_inset Formula $x\left(t\right)=Ae^{i\omega t}$
+\end_inset
+
+, its laplace transform, can be derived quite easily as follows
+\begin_inset Formula 
+\begin{align*}
+X\left(s\right) & =\int_{0}^{\infty}Ae^{i\omega t}e^{-st}dt\\
+ & =\frac{A}{i\omega-s}\left(e^{\left(i\omega-s\right)t}\right)_{0}^{\infty}\\
+ & =\frac{A}{i\omega-s}\left(0-1\right)\\
+ & =\frac{A}{s-i\omega}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The equation becomes
+\begin_inset Formula 
+\[
+Y\left(s\right)=T\left(s\right)X\left(s\right)=T\left(s\right)\frac{A}{s-i\omega}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Consider the steady-state of the system, one can find the response of the
+ system as
+\begin_inset Formula 
+\[
+y\left(t\right)=T\left(i\omega\right)Ae^{i\omega t}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Although we can find 
+\begin_inset Formula $y\left(t\right)$
+\end_inset
+
+ in response of a complex sinusoidal wave, it doesn't make sense when we
+ are dealing with real inputs and outputs.
+ To apply the above result on real waves, consider define 
+\begin_inset Formula $T\left(i\omega\right)=B\left(\omega\right)e^{i\phi\left(\omega\right)}$
+\end_inset
+
+, and then we can have
+\begin_inset Formula 
+\begin{align*}
+y\left(t\right) & =B\left(\omega\right)e^{i\phi\left(\omega\right)}Ae^{i\omega t}\\
+ & =B\left(\omega\right)Ae^{i\left(\omega t+\phi\left(\omega\right)\right)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we apply the Euler formula, we get
+\begin_inset Formula 
+\begin{align*}
+y\left(t\right) & =B\left(\omega\right)A\left(\cos\left(\omega t+\phi\left(\omega\right)\right)+i\sin\left(\omega t+\phi\left(\omega\right)\right)\right)\\
+ & =B\left(\omega\right)A\cos\left(\omega t+\phi\left(\omega\right)\right)+iB\left(\omega\right)A\sin\left(\omega t+\phi\left(\omega\right)\right).
+\end{align*}
+
+\end_inset
+
+Apply the differental operator 
+\begin_inset Formula $L$
+\end_inset
+
+, we can get
+\begin_inset Formula 
+\[
+Ly\left(t\right)=LB\left(\omega\right)A\cos\left(\omega t+\phi\left(\omega\right)\right)+iLB\left(\omega\right)A\sin\left(\omega t+\phi\left(\omega\right)\right)=x\left(t\right).
+\]
+
+\end_inset
+
+Directly compare the real part and imaginary part of the euqation, we get
+\begin_inset Formula 
+\begin{align*}
+L\left(B\left(\omega\right)\cos\left(\omega t+\phi\left(\omega\right)\right)\right) & =\cos\left(\omega t\right)\\
+L\left(B\left(\omega\right)\sin\left(\omega t+\phi\left(\omega\right)\right)\right) & =\sin\left(\omega t\right).
+\end{align*}
+
+\end_inset
+
+The result shows that for 
+\begin_inset Formula $x\left(t\right)=\sin\left(\omega t\right)$
+\end_inset
+
+, the coorsponding frequency response is 
+\begin_inset Formula $y\left(t\right)=B\left(\omega\right)\sin\left(\omega t+\phi\left(\omega\right)\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
