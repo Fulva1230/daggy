@@ -1,0 +1,81 @@
+---
+title: "Frequency Response Derivation"
+date: 2023-10-21T21:11:06+08:00
+draft: false
+---
+
+:stem: latexmath
+:eqnums:
+
+The frequency response of a system is its output in response of a sinusoidal input, for example, a stem:[\sin\omega t]. If the system is linear and stable, its response must also be a sinusoidal wave of the same frequecy.
+
+Here we present a simple derivation of the frequency response formula. Consider that a linear differential system
+[stem]
+++++
+Ly\left(t\right)=x\left(t\right)
+++++
+where stem:[L=\left(\frac{d^{n}}{dt^{n}}+a_{1}\frac{d^{n-1}}{dt^{n-1}}+...+a_{n-1}\frac{d}{dt}+a_{n}\right)].
+
+If we take laplace transform of both sides of the equation and assume stem:[y^{\left(k\right)}\left(0\right)=0,k\in[0,n-1]] , we get the transformed equation given by
+
+[stem]
+++++
+\left(s^{n}+a_{1}s^{n-1}+...+a_{n-1}s+a_{n}\right)Y\left(s\right)=X\left(s\right).
+++++
+
+Let's formulate the equation as
+[stem]
+++++
+\frac{Y\left(s\right)}{X\left(s\right)}=T\left(s\right)=\left(s^{n}+a_{1}s^{n-1}+...+a_{n-1}s+a_{n}\right)^{-1}.
+++++
+
+Consider defining the input stem:[x\left(t\right)=Ae^{i\omega t}], its laplace transform, can be derived as follows
+
+[stem]
+++++
+\begin{align*}
+X\left(s\right)&=\int_{0}^{\infty}Ae^{i\omega t}e^{-st}dt\\&=\frac{A}{i\omega-s}\left(e^{\left(i\omega-s\right)t}\right)_{0}^{\infty}\\&=\frac{A}{i\omega-s}\left(0-1\right)\\&=\frac{A}{s-i\omega}
+\end{align*}
+++++
+
+The equation becomes
+[stem]
+++++
+Y\left(s\right)=T\left(s\right)X\left(s\right)=T\left(s\right)\frac{A}{s-i\omega}.
+++++
+
+Consider the steady-state of the system, one can find the response of the system as
+[stem]
+++++
+y\left(t\right)=T\left(i\omega\right)Ae^{i\omega t}.
+++++
+
+Although we can find stem:[y\left(t\right)] in response of a complex sinusoidal wave, it doesn't make sense when we are dealing with real inputs and outputs. To apply the above result on real waves, consider define stem:[T\left(i\omega\right)=B\left(\omega\right)e^{i\phi\left(\omega\right)}], and then we can have
+
+[stem]
+++++
+\begin{align*}
+y\left(t\right)&=B\left(\omega\right)e^{i\phi\left(\omega\right)}Ae^{i\omega t}\\&=B\left(\omega\right)Ae^{i\left(\omega t+\phi\left(\omega\right)\right)}
+\end{align*}
+++++
+
+If we apply the Euler formula, we get
+[stem]
+++++
+\begin{align*}
+y\left(t\right)&=B\left(\omega\right)A\left(\cos\left(\omega t+\phi\left(\omega\right)\right)+i\sin\left(\omega t+\phi\left(\omega\right)\right)\right)\\&=B\left(\omega\right)A\cos\left(\omega t+\phi\left(\omega\right)\right)+iB\left(\omega\right)A\sin\left(\omega t+\phi\left(\omega\right)\right).
+\end{align*}
+++++
+Apply the differental operator stem:[L], we can get
+[stem]
+++++
+Ly\left(t\right)=LB\left(\omega\right)A\cos\left(\omega t+\phi\left(\omega\right)\right)+iLB\left(\omega\right)A\sin\left(\omega t+\phi\left(\omega\right)\right)=x\left(t\right).
+++++
+Directly compare the real part and imaginary part of the euqation, we get
+[stem]
+++++
+\begin{align*}
+L\left(B\left(\omega\right)\cos\left(\omega t+\phi\left(\omega\right)\right)\right)&=\cos\left(\omega t\right)\\L\left(B\left(\omega\right)\sin\left(\omega t+\phi\left(\omega\right)\right)\right)&=\sin\left(\omega t\right).
+\end{align*}
+++++
+The result shows that for stem:[x\left(t\right)=\sin\left(\omega t\right)], the coorsponding frequency response is stem:[y\left(t\right)=B\left(\omega\right)\sin\left(\omega t+\phi\left(\omega\right)\right)].
