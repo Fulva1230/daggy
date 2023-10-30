@@ -14,7 +14,7 @@ Here we present a simple derivation of the frequency response formula. Consider 
 ++++
 Ly\left(t\right)=x\left(t\right)
 ++++
-where stem:[L=\left(\frac{d^{n}}{dt^{n}}+a_{1}\frac{d^{n-1}}{dt^{n-1}}+...+a_{n-1}\frac{d}{dt}+a_{n}\right)].
+where stem:[L=\left(\frac{d^{n}}{dt^{n}} + a_{1}\frac{d^{n-1}}{dt^{n-1}} +...+a_{n-1}\frac{d}{dt}+a_{n}\right)].
 
 If we take laplace transform of both sides of the equation and assume stem:[y^{\left(k\right)}\left(0\right)=0,k\in[0,n-1]] , we get the transformed equation given by
 
