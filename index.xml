@@ -15,7 +15,7 @@
       <guid>https://fulva1230.github.io/daggy/posts/frequency-response-derivation/</guid>
       <description>The frequency response of a system is its output in response of a sinusoidal input, for example, a \(\sin\omega t\). If the system is linear and stable, its response must also be a sinusoidal wave of the same frequecy.
 Here we present a simple derivation of the frequency response formula. Consider that a linear differential system
-\[Ly\left(t\right)=x\left(t\right)\] where \(L=\left(\frac{d^{n}}{dt^{n}}a_{1}\frac{d^{n-1}}{dt^{n-1}}...+a_{n-1}\frac{d}{dt}+a_{n}\right)\).
+\[Ly\left(t\right)=x\left(t\right)\] where \(L=\left(\frac{d^{n}}{dt^{n}} + a_{1}\frac{d^{n-1}}{dt^{n-1}} +...+a_{n-1}\frac{d}{dt}+a_{n}\right)\).
 If we take laplace transform of both sides of the equation and assume \(y^{\left(k\right)}\left(0\right)=0,k\in[0,n-1\)] , we get the transformed equation given by</description>
     </item>
     
