@@ -6,7 +6,19 @@
     <description>Recent content on Daggy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 21 Oct 2023 21:11:06 +0800</lastBuildDate><atom:link href="https://fulva1230.github.io/daggy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Jan 2024 22:51:58 +0800</lastBuildDate><atom:link href="https://fulva1230.github.io/daggy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Power in Reactive Circuits</title>
+      <link>https://fulva1230.github.io/daggy/posts/power-in-reactive-circuits/</link>
+      <pubDate>Tue, 23 Jan 2024 22:51:58 +0800</pubDate>
+      
+      <guid>https://fulva1230.github.io/daggy/posts/power-in-reactive-circuits/</guid>
+      <description>Consier the voltage and current are cosine waves with differnt phase and magnitude. The average power is given by
+\[P = \frac{1}{T}\int_{0}^{T}A_{v}\cos\left(\frac{2\pi t}{T}+\phi_{v}\right)A_{i}\cos\left(\frac{2\pi t}{T}+\phi_{i}\right)dt.\] We can apply Euler’s formula to re-formulate the equation
+\[\begin{aligned} P=&amp;amp;\frac{A_{v}A_{i}}{T}\int_{0}^{T}\frac{1}{2}\left(e^{j\left(\frac{2\pi t}{T}+\phi_{v}\right)}+e^{-j\left(\frac{2\pi t}{T}+\phi_{v}\right)}\right)\Re\left(e^{j\left(\frac{2\pi t}{T}+\phi_{i}\right)}\right)dt\\=&amp;amp;\frac{A_{v}A_{i}}{2T}\int_{0}^{T}\Re\left(e^{j\left(\frac{2\pi t}{T}+\phi_{i}\right)}\left(e^{j\left(\frac{2\pi t}{T}+\phi_{v}\right)}+e^{-j\left(\frac{2\pi t}{T}+\phi_{v}\right)}\right)\right)dt\\=&amp;amp;\frac{A_{v}A_{i}}{2T}\int_{0}^{T}\Re\left(e^{j\left(\frac{4\pi t}{T}+\phi_{i}+\phi_{v}\right)}+e^{j\left(\frac{2\pi t}{T}+\phi_{i}\right)}e^{-j\left(\frac{2\pi t}{T}+\phi_{v}\right)}\right)dt\\=&amp;amp;\frac{A_{v}A_{i}}{2T}\int_{0}^{T}\Re\left(e^{j\left(\frac{2\pi t}{T}+\phi_{i}\right)}e^{-j\left(\frac{2\pi t}{T}+\phi_{v}\right)}\right)dt \end{aligned}\] where
+\[\begin{equation} V=\frac{\sqrt{2}}{2}A_{v}e^{j\phi_{i}}, I=\frac{\sqrt{2}}{2}A_{i}e^{j\phi_{v}} \end{equation}\] are complex rms amplitudes.</description>
+    </item>
+    
     <item>
       <title>Frequency Response Derivation</title>
       <link>https://fulva1230.github.io/daggy/posts/frequency-response-derivation/</link>
@@ -38,7 +50,7 @@ That is, setting one variable as a parameter and making the other one be changed
       
       <guid>https://fulva1230.github.io/daggy/posts/solve-x-square-x/</guid>
       <description>How to solve \(\frac{dx^x}{dx}\)?
-Observe that the expression is an exponential function whoise base and exponent both are a function of \(x\). When both the base and exponent change with \(x\), how the expression changes with \(x\) is quite complicated. To simplify, some techniques can apply to fix part of an expression when taking its derivative.
+Observe that the expression is an exponential function whois base and exponent both are a function of \(x\). When both the base and exponent change with \(x\), how the expression changes with \(x\) is quite complicated. To simplify, some techniques can apply to fix part of an expression when taking its derivative.
 Define a multivariate function with two independent variables \(s\) and \(t\):
 \[\begin{equation} z = s^t \end{equation}\] where either the \(s\) and \(t\) are a function of \(x\).</description>
     </item>
