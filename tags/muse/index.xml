@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>muse on Daggy</title>
     <link>https://fulva1230.github.io/daggy/tags/muse/</link>
     <description>Recent content in muse on Daggy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 02 Jan 2022 13:22:54 +0000</lastBuildDate><atom:link href="https://fulva1230.github.io/daggy/tags/muse/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Jan 2022 13:22:54 +0000</lastBuildDate>
+    <atom:link href="https://fulva1230.github.io/daggy/tags/muse/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Does It Hurt?</title>
       <link>https://fulva1230.github.io/daggy/posts/does-it-hurt/</link>
       <pubDate>Sun, 02 Jan 2022 13:22:54 +0000</pubDate>
-      
       <guid>https://fulva1230.github.io/daggy/posts/does-it-hurt/</guid>
       <description>在射擊遊戲中，當你奮力殺敵的時候，敵人痛苦的倒下，你是否想過一個問題，當他們倒下時，會不會痛？聽起來是個很奇怪的問題對吧，你肯定認為敵人會痛苦的倒下，是因為有人寫了程式，計算敵人受到的傷害，當生命值歸零的那個瞬間，便播放痛苦倒下的動畫，當然，動畫是人預先畫出來的。
 因為程式內部的計算是生硬的生命值加減，所以在遊戲中敵人痛苦的倒下只是個假象，實際上沒有一個意識，會經歷痛苦，並隨著你殺敵而消逝。但當你看著某個活生生的人，不管為了什麼原因，露出痛苦的表情時，你卻不會告訴自己說：「那個人只是因為大腦內電磁波、神經元的反應，讓他做出這樣的動作。」為什麼？
@@ -22,6 +22,5 @@
 你大概會是對的，用單純程式碼構築的遊戲角色，大概沒有複雜的到會產生內在經驗。但如果使用AI或是機器學習來產生遊戲角色的行為時，他們的行為將變得更加豐富，而最終，沒有人能理解內部程式運作的邏輯為何。如果他們的行為能與人相彷，只不過存在於遊戲中，他們會有內在經驗嗎？他們的痛苦會真的有個「靈魂」承受嗎？
 或許下次你在玩遊戲的時候，板機扣下之前猶豫一下，或者跟對面和解，說不定遊戲角色真的會感謝你（但不一定會表現出來）。</description>
     </item>
-    
   </channel>
 </rss>
