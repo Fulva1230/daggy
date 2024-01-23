@@ -9,7 +9,7 @@ draft: false
 
 How to solve stem:[\frac{dx^x}{dx}]?
 
-Observe that the expression is an exponential function whoise base and exponent both are a function of stem:[x]. When both the base and exponent change with stem:[x], how the expression changes with stem:[x] is quite complicated. To simplify, some techniques can apply to fix part of an expression when taking its derivative.
+Observe that the expression is an exponential function whois base and exponent both are a function of stem:[x]. When both the base and exponent change with stem:[x], how the expression changes with stem:[x] is quite complicated. To simplify, some techniques can apply to fix part of an expression when taking its derivative.
 
 Define a multivariate function with two independent variables stem:[s] and stem:[t]:
 [stem]

@@ -1,0 +1,31 @@
+---
+title: "Power in Reactive Circuits"
+date: 2024-01-23T22:51:58+08:00
+draft: false
+---
+
+:stem: latexmath
+:eqnums:
+
+Consier the voltage and current are cosine waves with differnt phase and magnitude. The average power is given by
+
+[stem]
+++++
+P = \frac{1}{T}\int_{0}^{T}A_{v}\cos\left(\frac{2\pi t}{T}+\phi_{v}\right)A_{i}\cos\left(\frac{2\pi t}{T}+\phi_{i}\right)dt.
+++++
+
+We can apply Euler's formula to re-formulate the equation
+[stem]
+++++
+\begin{aligned}
+P=&\frac{A_{v}A_{i}}{T}\int_{0}^{T}\frac{1}{2}\left(e^{j\left(\frac{2\pi t}{T}+\phi_{v}\right)}+e^{-j\left(\frac{2\pi t}{T}+\phi_{v}\right)}\right)\Re\left(e^{j\left(\frac{2\pi t}{T}+\phi_{i}\right)}\right)dt\\=&\frac{A_{v}A_{i}}{2T}\int_{0}^{T}\Re\left(e^{j\left(\frac{2\pi t}{T}+\phi_{i}\right)}\left(e^{j\left(\frac{2\pi t}{T}+\phi_{v}\right)}+e^{-j\left(\frac{2\pi t}{T}+\phi_{v}\right)}\right)\right)dt\\=&\frac{A_{v}A_{i}}{2T}\int_{0}^{T}\Re\left(e^{j\left(\frac{4\pi t}{T}+\phi_{i}+\phi_{v}\right)}+e^{j\left(\frac{2\pi t}{T}+\phi_{i}\right)}e^{-j\left(\frac{2\pi t}{T}+\phi_{v}\right)}\right)dt\\=&\frac{A_{v}A_{i}}{2T}\int_{0}^{T}\Re\left(e^{j\left(\frac{2\pi t}{T}+\phi_{i}\right)}e^{-j\left(\frac{2\pi t}{T}+\phi_{v}\right)}\right)dt
+\end{aligned}
+++++
+where
+[stem]
+++++
+\begin{equation}
+V=\frac{\sqrt{2}}{2}A_{v}e^{j\phi_{i}}, I=\frac{\sqrt{2}}{2}A_{i}e^{j\phi_{v}}
+\end{equation}
+++++
+are complex rms amplitudes.
