@@ -1,0 +1,67 @@
+---
+title: "Note on Quaternions and Rotation"
+date: 2024-12-14T21:53:14+08:00
+draft: false
+---
+
+:stem: latexmath
+:eqnums:
+
+Quaternion is an interesting construct to deal with rotations. I personally like to consider it as a set of 3-dimensional vector and a scalar with a special version of product defined on it. The product rule is
+[stem]
+++++
+\mathbf{q}_{1}\mathbf{q}_{2}=\left(w_{1},\vec{v}_{1}\right)\left(w_{2},\vec{v}_{2}\right)=\left(w_{1}w_{2}-\vec{v}_{1}\cdot\vec{v}_{2},w_{1}\vec{v}_{2}+w_{2}\vec{v}_{1}+\vec{v}_{1}\times\vec{v}_{2}\right).
+++++
+To use quaternions as an operator to perform rotation, we need to first represent a vector as a quaternion. It's simple, we just consider a quaterion as
+[stem]
+++++
+\mathbf{p}=\left(0,\vec{p}\right).
+++++
+Consider a vector being undergoing a rotation with an unit angular velocity stem:[\vec{\omega}], its differential equation is
+[stem]
+++++
+\mathbf{\dot{p}}=\left(0,\dot{\vec{p}}\right)=\left(0,\vec{\omega}\times\vec{p}\right).
+++++
+A little arrangement we can find a way to express the equation with quaternion product as given by
+[stem]
+++++
+\begin{align*}
+\mathbf{\dot{p}}&=\frac{1}{2}\left(\omega\left(0,\vec{p}\right)+\left(0,\vec{p}\right)\omega^{*}\right)\\&=\frac{1}{2}\left(\left(0,\vec{\omega}\right)\left(0,\vec{p}\right)+\left(0,\vec{p}\right)\left(0,-\vec{\omega}\right)\right)\\&=\frac{1}{2}\left(\left(-\vec{\omega}\cdot\vec{p},\vec{\omega}\times\vec{p}\right)+\left(\vec{\omega}\cdot\vec{p},-\vec{p}\times\vec{\omega}\right)\right)\\&=\left(0,\vec{\omega}\times\vec{p}\right).
+\end{align*}
+++++
+where stem:[\omega=\left(0,\vec{\omega}\right)] is a pure quaternion and satisfy stem:[\omega\omega^{*}=1].
+
+Let's define a quaternion-valued function of stem:[\theta] as given by stem:[e^{\frac{\theta}{2}\omega}] where having the property of exponential function, that is
+[stem]
+++++
+\frac{d}{d\theta}e^{\frac{\theta}{2}\omega}=\frac{\omega}{2}e^{\frac{\theta}{2}\omega}=e^{\frac{\theta}{2}\omega}\frac{\omega}{2}.
+++++
+If we let stem:[\mathbf{p}\left(\theta\right)=e^{\frac{\theta}{2}\omega}\mathbf{p}_{0}e^{-\frac{\theta}{2}\omega}], take its derivative yields
+[stem]
+++++
+\begin{align*}
+\mathbf{\dot{p}}\left(\theta\right)&=\frac{\omega}{2}\left(e^{\frac{\theta}{2}\omega}\mathbf{p}_{0}e^{-\frac{\theta}{2}\omega}\right)+\left(e^{\frac{\theta}{2}\omega}\mathbf{p}_{0}e^{-\frac{\theta}{2}\omega}\right)\left(-\frac{\omega}{2}\right)\\&=\frac{1}{2}\left(\omega\mathbf{p}+\mathbf{p}\omega^{*}\right)=\left(0,\vec{\omega}\times\vec{p}\right).
+\end{align*}
+++++
+Note that since stem:[\vec{\omega}] is an unit angular velocity, stem:[\theta]  is the angle of rotation in radian. Finding stem:[e^{\frac{\theta}{2}\omega}] is equivalent to finding a way to perform rotation with quaternions. Let's observe that stem:[\omega]  has a property similar to stem:[i],
+[stem]
+++++
+\omega^{2}=i^{2}=-1.
+++++
+As in the Euler's formula,
+[stem]
+++++
+\begin{align*}
+e^{\theta i}&=1+i\theta-\frac{\theta^{2}}{2!}-i\frac{\theta^{3}}{3!}+\frac{\theta^{4}}{4!}+...=\left(1-\frac{\theta^{2}}{2!}+\frac{\theta^{4}}{4!}-...\right)+i\left(\theta-\frac{\theta^{3}}{3!}+\frac{\theta^{5}}{5!}-...\right)\\&=\cos\theta+i\sin\theta,
+\end{align*}
+++++
+a similar approach yields
+[stem]
+++++
+e^{\frac{\theta}{2}\omega}=\cos\frac{\theta}{2}+\omega\sin\frac{\theta}{2}=\left(\cos\frac{\theta}{2},\vec{\omega}\sin\frac{\theta}{2}\right).
+++++
+To sum up, when representing a vector stem:[\vec{p}] as a pure quaternion stem:[\mathbf{p}=\left(0,\vec{p}\right)], we can use a quaternion stem:[e^{\frac{\theta}{2}\omega}=\left(\cos\frac{\theta}{2},\vec{\omega}\sin\frac{\theta}{2}\right)] to rotate the vector around the axis specified by stem:[\vec{\omega}] for stem:[\theta] . The equation to use it given by
+[stem]
+++++
+\mathbf{\mathbf{p}^{'}}=e^{\frac{\theta}{2}\omega}\mathbf{p}e^{-\frac{\theta}{2}\omega}.
+++++
