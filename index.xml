@@ -6,8 +6,33 @@
     <description>Recent content on Daggy</description>
     <generator>Hugo -- 0.139.4</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 23 Jan 2024 22:51:58 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 14 Dec 2024 21:53:14 +0800</lastBuildDate>
     <atom:link href="https://fulva1230.github.io/daggy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Note on Quaternions and Rotation</title>
+      <link>https://fulva1230.github.io/daggy/posts/quaternion/</link>
+      <pubDate>Sat, 14 Dec 2024 21:53:14 +0800</pubDate>
+      <guid>https://fulva1230.github.io/daggy/posts/quaternion/</guid>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Quaternion is an interesting construct to deal with rotations. I personally like to consider it as a set of 3-dimensional vector and a scalar with a special version of product defined on it. The product rule is&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\mathbf{q}_{1}\mathbf{q}_{2}=\left(w_{1},\vec{v}_{1}\right)\left(w_{2},\vec{v}_{2}\right)=\left(w_{1}w_{2}-\vec{v}_{1}\cdot\vec{v}_{2},w_{1}\vec{v}_{2}+w_{2}\vec{v}_{1}+\vec{v}_{1}\times\vec{v}_{2}\right).\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;To use quaternions as an operator to perform rotation, we need to first represent a vector as a quaternion. It’s simple, we just consider a quaterion as&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;stemblock&#34;&gt;
+&lt;div class=&#34;content&#34;&gt;
+\[\mathbf{p}=\left(0,\vec{p}\right).\]
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Consider a vector being undergoing a rotation with an unit angular velocity \(\vec{\omega}\), its differential equation is&lt;/p&gt;
+&lt;/div&gt;</description>
+    </item>
     <item>
       <title>Power in Reactive Circuits</title>
       <link>https://fulva1230.github.io/daggy/posts/power-in-reactive-circuits/</link>
