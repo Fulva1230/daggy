@@ -44,6 +44,7 @@ params:
     hideSummary: false
     showtoc: true
     tocopen: true
+    social: true
 
     cover:
         hidden: true # hide everywhere but not in structured data
